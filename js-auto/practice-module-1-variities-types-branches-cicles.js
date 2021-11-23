@@ -313,3 +313,91 @@
 //   const canAccessContent = subType === "pro" || subType === "vip"; // Change this line
 //   return canAccessContent;
 // }
+// ========================================
+// 23. Функция isNumberNotInRange(start, end, number) проверяет, не входит ли число в промежуток.
+// То есть число должно быть меньше либо равно start и больше либо равно end. Результатом выражения проверки будет буль true или false.
+// Она объявляет три параметра, значения которых будут задаваться во время её вызова:
+// number - число, не вхождение которого проверяется
+// start - начало числового промежутка
+// end - конец числового промежутка
+// Присвой переменной isNotInRange выражение инверсии значения переменной isInRange используя оператор !.
+// function isNumberNotInRange(start, end, number) {
+//   const isInRange = number >= start && number <= end;
+//   const isNotInRange = !isInRange; // Change this line
+//   return isNotInRange;
+// }
+// ========================================
+// 24. Задача: расчёт скидки
+// Функция getDiscount(totalSpent) определяет значение скидки в зависимости от общей суммы потраченных денег (параметр totalSpent) в магазине за всё время (партнёрская программа). Скидка записывается в переменную discount и возвращается из функции как результат её работы.
+// Используя ветвления и логические операторы, дополни код функции.
+// Если потрачено от 50000 ( включительно ) или больше кредитов - скидка 10% (золотой партнёр)
+// Если потрачено от 20000 (включительно) до 50000 кредитов - скидка 5% (серебрянный партнёр)
+// Если потрачено от 5000 (включительно) до 20000 кредитов - скидка 2% (бронзовый партнёр)
+// Если потрачено меньше чем 5000 кредитов - скидка 0 (базовый партнёр)
+// Значения скидок каждого уровня хранятся в одноимённых константах BASE_DISCOUNT, BRONZE_DISCOUNT, SILVER_DISCOUNT и GOLD_DISCOUNT.
+// function getDiscount(totalSpent) {
+//   const BASE_DISCOUNT = 0;
+//   const BRONZE_DISCOUNT = 0.02;
+//   const SILVER_DISCOUNT = 0.05;
+//   const GOLD_DISCOUNT = 0.1;
+//   let discount;
+//   // Change code below this line
+// if(totalSpent>=50000){
+//   discount = GOLD_DISCOUNT
+// } else if (totalSpent<50000 && totalSpent>=20000){
+//     discount = SILVER_DISCOUNT
+// }   else if (totalSpent<20000 && totalSpent>=5000){
+//     discount = BRONZE_DISCOUNT
+// } else {discount = BASE_DISCOUNT}
+//   // Change code above this line
+//   return discount;
+// }
+// ========================================
+// 25. Выполни рефакторинг решения задачи «Склад товаров», заменив инструкцию if...else тернарным оператором.
+// function checkStorage(available, ordered) {
+//   let message;
+//   // Change code below this line
+//   message =
+//     ordered > available
+//       ? 'Not enough goods in stock!'
+//       : 'The order is accepted, our manager will contact you';
+//   // Change code above this line
+
+//   return message;
+// }
+// checkStorage(100, 50);
+// checkStorage(100, 130);
+// ========================================
+// 26. Задача: проверка пароля
+// Функция checkPassword(password) сравнивает переданный ей пароль (параметр password) с сохранённым паролем
+//  администратора (константа ADMIN_PASSWORD) и возвращает строку с сообщением о результате.
+// Используя тернарный оператор дополни функцию так, что:
+// Если значения password и ADMIN_PASSWORD совпадают, присвой переменной message строку "Access is allowed".
+// В противном случае, присвой message строку "Access denied, wrong password!".
+// function checkPassword(password) {
+//   const ADMIN_PASSWORD = 'jqueryismyjam';
+//   let message;
+//   // Change code below this line
+//   message =
+//     ADMIN_PASSWORD === password
+//       ? 'Access is allowed'
+//       : 'Access denied, wrong password!';
+//   // Change code above this line
+//   return message;
+// }
+// 27. Инструкция switch
+// Функция getSubscriptionPrice(type) получает строку с типом подписки пользователя (параметр type),
+// проверяет её на совпадение с тремя возможными типами ежемесячной подписки и возвращает цену хранящуюся в переменной price.
+// Если значение параметра type это строка:
+// "starter" - цена подписки 0 кредитов.
+// "professional" - цена подписки 20 кредитов.
+// "organization" - цена подписки 50 кредитов.
+// Изначально в теле функции была инструкция if...else, которая выглядела вот так.
+// if (type === "starter") {
+//   price = 0;
+// } else if (type === "professional") {
+//   price = 20;
+// } else if (type === "organization") {
+//   price = 50;
+// }
+// После рефакторинга инструкция if..else была заменена на switch. Дополни код инструкции switch, чтобы функция работала правильно.
